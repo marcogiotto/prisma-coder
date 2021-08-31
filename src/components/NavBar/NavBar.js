@@ -1,4 +1,7 @@
 import './NavBar.css';
+import CartWidget from './CartWidget';
+
+
 const NavBar = () => {
 
     return (
@@ -6,8 +9,9 @@ const NavBar = () => {
            <div className="container">
                 
                 <a className="logo" href=""><h1>PRISMA</h1></a>
-                <nav className="navbar navbar-expand-lg navbar-dark">
-                       <button className="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <nav className="navbar navbar-expand-lg navbar-dark me-lg-5">
+               
+                       <button className="navbar-toggler ms-auto me-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                        <span className="navbar-toggler-icon"></span>
                        </button>
                        <div className="collapse navbar-collapse " id="navbarNavDropdown">
@@ -35,8 +39,11 @@ const NavBar = () => {
                            
                        </ul>
                        </div>
+                      
                    
                </nav>
+               <CartWidget/>
+              
                 </div>
        </header>
     )
