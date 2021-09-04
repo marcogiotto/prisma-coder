@@ -1,8 +1,8 @@
 import './NavBar.css';
-import CartWidget from './CartWidget';
+import CartWidget from './CartWidget/CartWidget';
 
 
-const NavBar = () => {
+const NavBar = ({countCart}) => {
 
     return (
        <header >
@@ -42,7 +42,7 @@ const NavBar = () => {
                       
                    
                </nav>
-               <CartWidget/>
+               <CartWidget cartItems={countCart}/>
               
                 </div>
        </header>
