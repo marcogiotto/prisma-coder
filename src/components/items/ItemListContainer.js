@@ -7,37 +7,43 @@ const productsList = [
         id: 1,
         name: 'Remera Blanca',
         description: 'Remera muy blanca',
-        stock: 5
+        stock: 5,
+        imgUrl: '',
     },
     {
         id: 2,
         name: 'Remera Rosa',
         description: 'Remera muy blanca',
-        stock: 0
+        stock: 0,
+        imgUrl: '',
     },
     {
         id: 3,
         name: 'Remera Negra',
         description: 'Remera muy blanca',
-        stock: 5
+        stock: 5,
+        imgUrl: '',
     },
     {
         id: 4,
         name: 'Remera Negra',
         description: 'Remera muy blanca',
-        stock: 5
+        stock: 5,
+        imgUrl: '',
     },
     {
         id: 5,
         name: 'Remera Negra',
         description: 'Remera muy blanca',
-        stock: 5
+        stock: 5,
+        imgUrl: '',
     },
     {
         id: 6,
         name: 'Remera Negra',
         description: 'Remera muy blanca',
-        stock: 5
+        stock: 5,
+        imgUrl: '',
     }
 ]
 
