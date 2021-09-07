@@ -8,7 +8,7 @@ const Item = ({product}) => {
                 <div >
                 
                         <h2>{product.name}</h2>
-                        <p>$ 15000</p>
+                        <p>$ {product.price}</p>
                     
                     {/* {
                         product.stock > 0 ?

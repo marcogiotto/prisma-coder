@@ -9,6 +9,7 @@ const productsList = [
         description: 'Remera muy blanca',
         stock: 5,
         imgUrl: '',
+        price: 1500
     },
     {
         id: 2,
@@ -16,6 +17,7 @@ const productsList = [
         description: 'Remera muy blanca',
         stock: 0,
         imgUrl: '',
+        price: 1200
     },
     {
         id: 3,
@@ -23,6 +25,7 @@ const productsList = [
         description: 'Remera muy blanca',
         stock: 5,
         imgUrl: '',
+        price: 2500
     },
     {
         id: 4,
@@ -30,6 +33,7 @@ const productsList = [
         description: 'Remera muy blanca',
         stock: 5,
         imgUrl: '',
+        price: 1500
     },
     {
         id: 5,
@@ -37,6 +41,7 @@ const productsList = [
         description: 'Remera muy blanca',
         stock: 5,
         imgUrl: '',
+        price: 1800
     },
     {
         id: 6,
@@ -44,6 +49,7 @@ const productsList = [
         description: 'Remera muy blanca',
         stock: 5,
         imgUrl: '',
+        price: 1700
     }
 ]
 
