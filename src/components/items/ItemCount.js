@@ -15,9 +15,6 @@ const ItemCount = ({stock,initial,onAdd,onDelete}) => {
         if(currentStock < 1){
             setInitialCount(0);
         }
-        return () => {
-
-        }
     },[]);
 
     const addItem = () => {
@@ -70,7 +67,7 @@ const ItemCount = ({stock,initial,onAdd,onDelete}) => {
             if(initialCount < 1){
                 return <button className="btn btn-outline-danger" onClick={deleteItem}>Eliminar Item</button>;
             }else{
-                return <button className="btn btn-outline-primary" disabled={disabledButton} onClick={addCart} >Agregar Item</button>
+                return <button className="btn btn-outline-success" disabled={disabledButton} onClick={addCart} >Agregar Item</button>
             }
         }else{
             return <div className="alert alert-danger" role="alert">
@@ -86,6 +83,7 @@ const ItemCount = ({stock,initial,onAdd,onDelete}) => {
                 <p>{initialCount}</p>
                 <button className="btn btn-sm btn-outline-secondary" onClick={addItem}><i className="bi bi-plus-lg"></i></button>
             </div>
+            
             { showButton() }
         </div>
     )
