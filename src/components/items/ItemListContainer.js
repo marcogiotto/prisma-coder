@@ -1,6 +1,7 @@
 import { useState ,useEffect } from 'react';
-import ItemCount from "./ItemCount";
-import ItemList from "./ItemList";
+import ItemCount from "./ItemCount/ItemCount";
+import ItemList from "./ItemList/ItemList";
+import Loader from '../UI/Loader/Loader';
 
 const productsList = [
     {
@@ -81,7 +82,7 @@ const ItemListContainer = ({titulo,greeting,addCart,deleteProduct}) => {
     }
 
     return (
-        <div className="container">
+        <section className="container">
             <div className="row">
                 <div className="col-sm-12 my-5 py-5">
                     <h2>{titulo}</h2>
@@ -90,16 +91,15 @@ const ItemListContainer = ({titulo,greeting,addCart,deleteProduct}) => {
                     {
                         products.length > 0 ?
                         <ItemList products={products}/> :
-                        <div className="spinner-border" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
+                        <Loader/>
+
                     }
-                  
+                                      
                     
                 </div>
             </div>
 
-        </div>
+        </section>
     )
 }
 

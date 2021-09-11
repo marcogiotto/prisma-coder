@@ -1,7 +1,9 @@
 import './App.css';
+import { useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/items/ItemListContainer';
-import { useState } from 'react';
+import ItemDetailContainer from './components/items/ItemDetailContainer';
+
 
 function App() {
   const [countCart, setCountCart] = useState(0);
@@ -19,7 +21,9 @@ function App() {
     <div className="App">
       <NavBar countCart={countCart}/>
       <ItemListContainer titulo="Primsa shop" greeting="Próximamente" deleteProduct={deleteProductoFromCart} addCart={addProductToCart}/>
+      <ItemDetailContainer/>
     </div>
+      
   );
 }
 
