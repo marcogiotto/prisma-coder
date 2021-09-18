@@ -1,3 +1,11 @@
+# Prisma shop
+
+Prisma shop es una tienda online de ropa para hombre y mujeres.
+En este proyecto implemente la libreria de estilos css bootstrap para poder facilitar la estilización y el desarrollo mobile de la pagina. Tambien incluí bootstrap icons para poder implementar iconografía en la pagina de una forma mucho mas rapida y unificada.
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

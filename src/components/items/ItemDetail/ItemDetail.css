@@ -28,7 +28,7 @@
 .item-detail-data{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .item-con-stock{

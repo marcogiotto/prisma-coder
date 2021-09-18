@@ -2,17 +2,62 @@ import { useEffect,useState } from "react";
 import ItemDetail from './ItemDetail/ItemDetail';
 import Loader from "../UI/Loader/Loader";
 
-
 const itemDetails = [
-    {
-        id: 6,
-        name: 'Remera Negra',
-        description: 'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas "Letraset", las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum.',
-        stock: 5,
-        imgUrl: '1m.png',
-        price: 1700
-    }
-];
+        {
+            id: 1,
+            name: 'Remera estampada',
+            description: 'Remera estampada de bugsbunny',
+            stock: 5,
+            imgUrl: '1m.png',
+            price: 1500,
+            categoryId: 2,
+        },
+        {
+            id: 2,
+            name: 'Remera estampada',
+            description: 'Remera estampada de los simpson.',
+            stock: 0,
+            imgUrl: '2m.png',
+            price: 1200,
+            categoryId: 2,
+        },
+        {
+            id: 3,
+            name: 'Trench',
+            description: 'Trench edision limitada color beige',
+            stock: 5,
+            imgUrl: '3m.png',
+            price: 2500,
+            categoryId: 2,
+        },
+        {
+            id: 4,
+            name: 'Remera Negra estampada',
+            description: 'Remera estampada de star wars',
+            stock: 5,
+            imgUrl: '2.png',
+            price: 1500,
+            categoryId: 1,
+        },
+        {
+            id: 5,
+            name: 'Remera blanca estampada',
+            description: 'Remera blanca estampada con coyote',
+            stock: 5,
+            imgUrl: '3.png',
+            price: 1800,
+            categoryId: 1,
+        },
+        {
+            id: 6,
+            name: 'Remera Negra',
+            description: 'Remera negra, temporada invierno 2021',
+            stock: 5,
+            imgUrl: '4.png',
+            price: 1700,
+            categoryId: 1,
+        }
+]
 
 const getItem = () => {
     return new Promise((resolve,reject)=> {
@@ -22,19 +67,26 @@ const getItem = () => {
     });
 }
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({productId}) => {
 
     const [item, setItem] = useState([]);
 
     useEffect(()=> {
-        let data = getItem();
-        data.then(result => {
-            setItem(result);
+        
+        getItem().then(result => {
+            const product = result.filter(data => data.id == productId);
+           
+            setItem(product);
+
+            
         });
-    },[]);
+        return () => {
+            setItem([]);
+        }
+    },[productId]);
 
     return (
-        <section className="container">
+        <section className="container my-5 py-5 text-center">
                 {
                         item.length > 0 ?
                         item.map((res)=> <ItemDetail item={res} key={res.name}/>) :

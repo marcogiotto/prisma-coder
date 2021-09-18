@@ -1,14 +1,15 @@
 import './NavBar.css';
+import {Link, NavLink} from 'react-router-dom';
 import CartWidget from './CartWidget/CartWidget';
 
 
-const NavBar = ({countCart}) => {
+const NavBar = ({categories}) => {
 
     return (
        <header >
            <div className="container">
                 
-                <a className="logo" href=""><h1>PRISMA</h1></a>
+                <Link className="logo" to="/"><h1>PRISMA</h1></Link>
                 <nav className="navbar navbar-expand-lg navbar-dark me-lg-5">
                
                        <button className="navbar-toggler ms-auto me-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -17,19 +18,18 @@ const NavBar = ({countCart}) => {
                        <div className="collapse navbar-collapse " id="navbarNavDropdown">
                        <ul className="navbar-nav ms-auto">
                            <li className="nav-item">
-                           <a className="nav-link active" aria-current="page" href="#">Home</a>
+                           <NavLink className="nav-link" exact activeClassName="active" aria-current="page" to="/">Home</NavLink>
                            </li>
                            <li className="nav-item">
-                           <a className="nav-link " aria-current="page" href="#">Productos</a>
+                           <NavLink className="nav-link" exact activeClassName="active" aria-current="page" to="/products">Productos</NavLink>
                            </li>
                            <li className="nav-item dropdown">
                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                Categorías
                            </a>
                            <ul className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                               <li><a className="dropdown-item" href="#">Hombres</a></li>
-                               <li><a className="dropdown-item" href="#">Mujeres</a></li>
-                               <li><a className="dropdown-item" href="#">Niños</a></li>
+                               {categories.map(item => <li key={item.name} ><Link  className="dropdown-item" to={`/category/${item.id}`}>{item.name}</Link></li>)}
+                               
                            </ul>
                            </li>
                            <li className="nav-item">
@@ -42,7 +42,7 @@ const NavBar = ({countCart}) => {
                       
                    
                </nav>
-               <CartWidget cartItems={countCart}/>
+               <CartWidget cartItems={0}/>
               
                 </div>
        </header>

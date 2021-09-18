@@ -8,6 +8,7 @@ const ItemCount = ({stock,initial,onAdd,onDelete}) => {
     const [initialCount, setInitialCount] = useState(initial);
     const [disabledButton, setDisabledButton] = useState(false);
     
+    
     useEffect(() => {
         if(initialCount < 1){
             setInitialCount(1);
@@ -84,7 +85,9 @@ const ItemCount = ({stock,initial,onAdd,onDelete}) => {
                 <button className="btn btn-sm btn-outline-secondary" onClick={addItem}><i className="bi bi-plus-lg"></i></button>
             </div>
             
+            
             { showButton() }
+            
         </div>
     )
 }

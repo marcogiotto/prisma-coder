@@ -33,11 +33,12 @@
     padding: 0.5em 0;
     width: 100%;
     padding: 0.5em 0.5em 0 0.5em;
+    text-align: center;
 }
 /** IMPLEMENTAR CUANDO ESTE EL ITEMCOUNT **/
-/* .item > div {
-    min-height: 200px;
-} */
+.item > div {
+    min-height: 220px;
+}
 
 .item img{
     order: 1;

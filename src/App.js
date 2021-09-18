@@ -1,29 +1,38 @@
 import './App.css';
-import { useState } from 'react';
+import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
-import ItemListContainer from './components/items/ItemListContainer';
-import ItemDetailContainer from './components/items/ItemDetailContainer';
+import Home from './views/Home';
+import Products from './views/Products';
+import ProductDetail from './views/ProductDetail';
+
+const categories = [
+    {id: 1, name: "Hombres"},
+    {id: 2, name: "Mujeres"},
+]
 
 
 function App() {
-  const [countCart, setCountCart] = useState(0);
-  const addProductToCart = (count) => {
-
-      setCountCart(count);
-  }
-
-  const deleteProductoFromCart = () => {
-
-      setCountCart(0);
-  }
-
+  
   return (
-    <div className="App">
-      <NavBar countCart={countCart}/>
-      <ItemListContainer titulo="Primsa shop" greeting="Próximamente" deleteProduct={deleteProductoFromCart} addCart={addProductToCart}/>
-      <ItemDetailContainer/>
-    </div>
-      
+    <BrowserRouter> 
+        <NavBar categories={categories}/>
+        <main>
+        <Switch>
+          <Route exact path="/">
+                <Home></Home>
+          </Route>
+          <Route path="/products">
+                <Products ></Products>
+          </Route>
+          <Route path="/product/:id">
+                <ProductDetail></ProductDetail>
+          </Route>
+          <Route path="/category/:categoryId">
+                <Products categories={categories}></Products>
+          </Route>
+       </Switch>
+        </main>
+    </BrowserRouter>
   );
 }
 

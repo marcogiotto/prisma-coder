@@ -6,51 +6,57 @@ import Loader from '../UI/Loader/Loader';
 const productsList = [
     {
         id: 1,
-        name: 'Remera Blanca',
-        description: 'Remera muy blanca',
+        name: 'Remera estampada',
+        description: 'Remera estampada de bugsbunny',
         stock: 5,
-        imgUrl: '',
-        price: 1500
+        imgUrl: '1m.png',
+        price: 1500,
+        categoryId: 2,
     },
     {
         id: 2,
-        name: 'Remera Rosa',
-        description: 'Remera muy blanca',
+        name: 'Remera estampada',
+        description: 'Remera estampada de los simpson.',
         stock: 0,
-        imgUrl: '',
-        price: 1200
+        imgUrl: '2m.png',
+        price: 1200,
+        categoryId: 2,
     },
     {
         id: 3,
-        name: 'Remera Negra',
-        description: 'Remera muy blanca',
+        name: 'Trench',
+        description: 'Trench edision limitada color beige',
         stock: 5,
-        imgUrl: '',
-        price: 2500
+        imgUrl: '3m.png',
+        price: 2500,
+        categoryId: 2,
     },
     {
         id: 4,
-        name: 'Remera Negra',
-        description: 'Remera muy blanca',
+        name: 'Remera Negra estampada',
+        description: 'Remera estampada de star wars',
         stock: 5,
-        imgUrl: '',
-        price: 1500
+        imgUrl: '2.png',
+        price: 1500,
+        categoryId: 1,
     },
     {
         id: 5,
-        name: 'Remera Negra',
-        description: 'Remera muy blanca',
+        name: 'Remera blanca estampada',
+        description: 'Remera blanca estampada con coyote',
         stock: 5,
-        imgUrl: '',
-        price: 1800
+        imgUrl: '3.png',
+        price: 1800,
+        categoryId: 1,
     },
     {
         id: 6,
         name: 'Remera Negra',
-        description: 'Remera muy blanca',
+        description: 'Remera negra, temporada invierno 2021',
         stock: 5,
-        imgUrl: '',
-        price: 1700
+        imgUrl: '4.png',
+        price: 1700,
+        categoryId: 1,
     }
 ]
 
@@ -64,38 +70,40 @@ const getProducts = () => {
         },2000);
     });
 };
-const ItemListContainer = ({titulo,greeting,addCart,deleteProduct}) => {
+
+const ItemListContainer = ({titulo,greeting,addCart,deleteProduct,categoryId}) => {
     
     const [products,setProducts] = useState([]);
     
     useEffect(()=> {
         getProducts().then(res => {
-            setProducts(res);
+           if(categoryId){
+               const category = res.filter(item => item.categoryId == categoryId);
+               setProducts(category);
+           }else{
+               setProducts(res);
+           }
         });
-    },[]);
-    const onAdd = (count) => {
-        addCart(count); 
-    }
+        return () => {
+            setProducts([]);
+        }
+    },[categoryId]);
 
-    const onDelete = ()=> {
-        deleteProduct();
-    }
+   
 
     return (
         <section className="container">
             <div className="row">
-                <div className="col-sm-12 my-5 py-5">
+                <div className="col-sm-12 my-5 py-5 text-center">
                     <h2>{titulo}</h2>
                     <p>{greeting}</p>
-                    <ItemCount stock={5} initial={1} onDelete={onDelete} onAdd={onAdd} />
+                    {/* <ItemCount stock={5} initial={1} onDelete={onDelete} onAdd={onAdd} /> */}
                     {
                         products.length > 0 ?
                         <ItemList products={products}/> :
                         <Loader/>
 
-                    }
-                                      
-                    
+                    } 
                 </div>
             </div>
 

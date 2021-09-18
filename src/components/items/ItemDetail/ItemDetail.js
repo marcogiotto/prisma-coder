@@ -6,7 +6,7 @@ const ItemDetail = ({item}) => {
             <>
             <div className=" row item-detail-container">
                 <div className="col-sm-12 col-md-6 item-detail-img">
-                    <img src={'./imgs/' + item.imgUrl} alt={item.name} />
+                    <img src={`/imgs/${item.imgUrl}`} alt={item.name} />
                 </div>
                 <div className="col-sm-12 col-md-6 item-detail-data">
                     <h2>{item.name}</h2>
