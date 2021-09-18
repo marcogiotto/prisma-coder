@@ -19,7 +19,7 @@ const Products = ({categories}) => {
     
     return(
             <>  
-                <ItemListContainer titulo={title} categoryId={categoryId}></ItemListContainer>
+                <ItemListContainer titulo={title} greeting="La mejor calidad y precio." categoryId={categoryId}></ItemListContainer>
             </>
     )
 };

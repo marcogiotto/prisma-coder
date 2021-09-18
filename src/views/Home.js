@@ -5,7 +5,7 @@ const Home = () => {
 
     return (
         <>
-            <ItemListContainer titulo="Prisma shop" greeting="Encontrá gran variedad de productos." addCart={()=> {}} deleteProduct={() => {}}></ItemListContainer>   
+            <ItemListContainer titulo="Prisma shop" greeting="Encontrá gran variedad de productos."></ItemListContainer>   
         </>
     )
         

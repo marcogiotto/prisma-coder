@@ -71,7 +71,7 @@ const getProducts = () => {
     });
 };
 
-const ItemListContainer = ({titulo,greeting,addCart,deleteProduct,categoryId}) => {
+const ItemListContainer = ({titulo,greeting,categoryId}) => {
     
     const [products,setProducts] = useState([]);
     
@@ -97,7 +97,6 @@ const ItemListContainer = ({titulo,greeting,addCart,deleteProduct,categoryId}) =
                 <div className="col-sm-12 my-5 py-5 text-center">
                     <h2>{titulo}</h2>
                     <p>{greeting}</p>
-                    {/* <ItemCount stock={5} initial={1} onDelete={onDelete} onAdd={onAdd} /> */}
                     {
                         products.length > 0 ?
                         <ItemList products={products}/> :
