@@ -4,6 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import Home from './views/Home';
 import Products from './views/Products';
 import ProductDetail from './views/ProductDetail';
+import Cart from './views/Cart';
 
 const categories = [
     {id: 1, name: "Hombres"},
@@ -30,6 +31,9 @@ function App() {
           <Route path="/category/:categoryId">
                 <Products categories={categories}></Products>
           </Route>
+           <Route path="/cart">
+                  <Cart></Cart>
+           </Route>
        </Switch>
         </main>
     </BrowserRouter>
