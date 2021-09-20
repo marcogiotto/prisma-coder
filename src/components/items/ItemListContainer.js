@@ -1,7 +1,7 @@
 import { useState ,useEffect } from 'react';
-import ItemCount from "./ItemCount/ItemCount";
-import ItemList from "./ItemList/ItemList";
-import Loader from '../UI/Loader/Loader';
+import ItemCount from "./itemCount/ItemCount";
+import ItemList from "./itemList/ItemList";
+import Loader from '../UI/loader/Loader';
 
 const productsList = [
     {

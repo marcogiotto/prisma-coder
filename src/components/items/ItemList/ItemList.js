@@ -1,5 +1,5 @@
 
-import Item from '../Item/Item';
+import Item from '../item/Item';
 import './ItemList.css';
 
 

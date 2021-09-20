@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react";
-import ItemDetail from './ItemDetail/ItemDetail';
-import Loader from "../UI/Loader/Loader";
+import ItemDetail from './itemDetail/ItemDetail';
+import Loader from "../UI/loader/Loader";
 
 const itemDetails = [
         {

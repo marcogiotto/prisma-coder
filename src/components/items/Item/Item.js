@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './Item.css';
-import ItemCount from '../ItemCount/ItemCount';
+import ItemCount from '../itemCount/ItemCount';
 const Item = ({product}) => {
 
     const [cart,setCart] = useState(0);

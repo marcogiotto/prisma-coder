@@ -1,5 +1,5 @@
 import { useParams } from "react-router";
-import ItemDetailContainer from "../components/Items/ItemDetailContainer";
+import ItemDetailContainer from "../components/items/ItemDetailContainer";
 
 const ProductDetail = () => {
 

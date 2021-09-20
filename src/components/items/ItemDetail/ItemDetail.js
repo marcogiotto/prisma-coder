@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ItemDetail.css';
-import ItemCount from '../ItemCount/ItemCount';
+import ItemCount from '../itemCount/ItemCount';
 const ItemDetail = ({item}) => {
     
     const [itemCount,setItemCount] = useState(0);

@@ -1,5 +1,5 @@
 
-import ItemListContainer from '../components/Items/ItemListContainer';
+import ItemListContainer from '../components/items/ItemListContainer';
 
 const Home = () => {
 
